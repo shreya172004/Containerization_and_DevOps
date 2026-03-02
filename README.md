@@ -1,4 +1,4 @@
-# Containerization-and-devops-lab
+# Containerization-and-devops
 
 Name - Shreya Mahara  
 Sap id - 500121082    
