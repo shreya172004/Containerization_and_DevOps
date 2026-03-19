@@ -643,3 +643,11 @@ This project successfully implements all required components:
 - ✅ **Named volume persistence** — data survives complete container restarts
 - ✅ **Non-root user** — improved container security
 - ✅ **Table auto-creation** — DB schema initialized on startup without manual steps
+
+## 📝 Report
+
+See [REPORT.md](./REPORT.md) for the detailed project report including:
+- Build optimization explanation
+- Network design diagram
+- Image size comparison
+- Macvlan vs IPvlan comparison
