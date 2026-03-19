@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+
+  db:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: shreya
+      POSTGRES_PASSWORD: shreya123
+      POSTGRES_DB: appdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      mynetwork:
+        ipv4_address: 172.22.208.10
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shreya -d appdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend_api
+    environment:
+      DB_HOST: 172.22.208.10
+      DB_PORT: 5432
+      DB_NAME: appdb
+      DB_USER: shreya
+      DB_PASS: shreya123
+    ports:
+      - "8000:8000"
+    networks:
+      mynetwork:
+        ipv4_address: 172.22.208.11
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  pgdata:
+    name: containerized-webapp_pgdata
+
+networks:
+  mynetwork:
+    external: true
