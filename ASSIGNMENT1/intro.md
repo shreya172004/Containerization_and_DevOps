@@ -1,12 +1,13 @@
 # FastAPI & PostgreSQL Deployment with Docker Compose and IPvlan Networking
 
-**Course:** Containerization and DevOps  
-**Assignment:** Containerized Web Application with PostgreSQL using Docker Compose and IPvlan  
-**Name:** Shreya Mahara  
-**Batch:** 3  
-**Sap-Id:** 500121082  
+**Course:** Containerization and DevOps         
+**Assignment:** Containerized Web Application with PostgreSQL using Docker Compose and IPvlan        
 
+---
 
+**Name:** Shreya Mahara         
+**Batch:** 3                   
+**Sap-Id:** 500121082                
 
 ---
 
