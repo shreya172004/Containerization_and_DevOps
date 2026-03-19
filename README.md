@@ -8,7 +8,7 @@ Batch - 3
 
 ## ASSIGNMENT
 
-- [Assignment 1](ASSIGNMENT1/assignment1.md)
+- [Assignment 1](ASSIGNMENT1/)
 
 ## LAB
 
