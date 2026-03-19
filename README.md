@@ -6,6 +6,10 @@ Batch - 3
 
 ---
 
+## ASSIGNMENT
+
+- [Assignment 1](ASSIGNMENT1/)
+
 ## LAB
 
 1. [Experiment 1 – Vagrant & NGINX Setup](lab/exp1/intro.md)
@@ -14,6 +18,8 @@ Batch - 3
 4. [Experiment 4 – Docker Essentials](lab/exp4/intro.md)
 5. [Experiment 5 – Docker - Volumes, Environment Variables, Monitoring  and Networks](lab/exp5/intro.md)
 6. [Experiment 6 – Docker Compose vs Docker Run](lab/exp6/intro.md)
+
+
 
 
 
