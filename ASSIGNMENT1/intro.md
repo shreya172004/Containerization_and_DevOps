@@ -10,7 +10,7 @@
 ---
 🌐 Live Project Site
 
-👉 > **[👉 Click here to view the full interactive project page](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html)**
+**[👉Link](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html)**
 
 The link above opens the project page with:
 
