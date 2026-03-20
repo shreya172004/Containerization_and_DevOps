@@ -21,7 +21,7 @@ The above link opens the project page with:
 ## 📁 Quick Access
 
 | Resource | Link |
-|---|---|
+|------------------------|-----------|
 | 🌐 **Interactive Project Page** | [Open Site](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html) |
 | 📄 **Full Report** | [REPORT.md](./REPORT.md) |
 | 🐳 **Docker Compose File** | [docker-compose.yml](./docker-compose.yml) |
