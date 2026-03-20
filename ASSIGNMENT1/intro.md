@@ -475,7 +475,7 @@ $ docker compose up -d
 
 ```bash
 $ docker exec backend_api python3 -c \
-  "import urllib.request; \
+  "import urllib.request; 
   print(urllib.request.urlopen('http://localhost:8000/api/records').read().decode())"
 ```
 
@@ -517,7 +517,7 @@ $ docker volume ls
 | Network Load | Higher (switch tracks many MACs) | Lower |
 | Scalability | Limited by switch MAC table size | Highly scalable |
 | Host Isolation | Host cannot reach containers | Host can communicate |
-| Best Use Case | Small LAN / bare metal | Cloud / VMs ✅ Used here |
+| Best Use Case | Small LAN / bare metal | Cloud / VMs used here |
 
 **Why IPvlan was chosen in our application:** In virtualized environments (like WSL/cloud VMs), many network interfaces block multiple MAC addresses per port. IPvlan avoids this by sharing the host MAC, making it the correct choice for this setup.
 
