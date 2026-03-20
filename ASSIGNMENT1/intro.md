@@ -119,6 +119,7 @@ $ nano database/init.sql
 $ nano docker-compose.yml
 $ nano .gitignore
 ```
+![](creationoffiles.png)
 
 ---
 
@@ -377,28 +378,16 @@ networks:
 IPvlan allows containers to get static IPs on the same subnet as the host, sharing the host's MAC address. This makes it more scalable than Macvlan in virtualized environments.
 
 ```bash
-$ docker network create \
-  -d ipvlan \
-  --subnet=172.22.208.0/24 \
-  --gateway=172.22.208.1 \
-  -o parent=eth0 \
-  mynetwork
+$ docker network create -d ipvlan --subnet=172.22.208.0/24 --gateway=172.22.208.1 -o parent=eth0  mynetwork
 
-3c13de8da92470216f345f5516e48ce390b1bdee209c09b5871211874e336062
 ```
+![](network.png)
 
 ### Verify Network
 
 ```bash
 $ docker network ls
-```
 
-```
-NETWORK ID     NAME        DRIVER    SCOPE
-3c13de8da924   mynetwork   ipvlan    local
-af37cd9201cc   bridge      bridge    local
-3c332ef2db47   host        host      local
-3e01062ba424   none        null      local
 ```
 
 ### Inspect Network
@@ -406,6 +395,7 @@ af37cd9201cc   bridge      bridge    local
 ```bash
 $ docker network inspect mynetwork
 ```
+![](inspect_network.png)
 
 ```json
 [
@@ -447,12 +437,6 @@ $ docker compose up --build
 
 ```bash
 $ docker ps
-```
-
-```
-CONTAINER ID   IMAGE                        COMMAND              STATUS         NAMES
-2ade162b21dd   containerized-webapp-backend "uvicorn app:app…"   Up 7 minutes   backend_api
-b49ae53fe2a1   containerized-webapp-db      "docker-entrypoint…" Up 7 minutes   postgres_db
 ```
 
 ---
