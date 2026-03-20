@@ -1,11 +1,8 @@
-# Project Report: FastAPI & PostgreSQL Deployment with Docker Compose and IPvlan Networking
+# Project Report: FastAPI & PostgreSQL Deployment with Docker Compose and IPvlan Networking   
 
-**Name:** Shreya Mahara
-**SAP ID:** 500121082
-**Batch:** 3
-**Subject:** Containerization & DevOps
-**Project:** FastAPI & PostgreSQL Deployment with Docker Compose and IPvlan Networking
-**Date:** March 2026
+**Name:** Shreya Mahara   
+**SAP ID:** 500121082   
+**Batch:** 3   
 
 ---
 
@@ -426,7 +423,7 @@ The resulting system is production-ready, optimized, secure, and demonstrates mo
 
 ---
 
-*GitHub Repository: https://github.com/shreya172004/Containerization_and_DevOps*
-*Live Site: https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/*
+*GitHub Repository: https://github.com/shreya172004/Containerization_and_DevOps*  
+*Live Site: https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/*  
 
 *End of Report*
