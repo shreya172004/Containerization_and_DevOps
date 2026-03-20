@@ -416,6 +416,6 @@ The resulting system is production-ready, optimized, secure, and demonstrates mo
 ---
 
 *GitHub Repository: https://github.com/shreya172004/Containerization_and_DevOps*  
-*Live Site: https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/*  
+*Live Site: https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/intro.html
 
 *End of Report*
