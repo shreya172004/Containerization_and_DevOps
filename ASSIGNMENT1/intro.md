@@ -18,15 +18,16 @@ The above link opens the project page with:
 - IPvlan vs Macvlan comparison table
 - Image optimization results
 
-## 📁 Quick Access
+## 📂 Quick Access
 
-| Resource | Link |
-|------------------------|-----------|
-| 🌐 **Interactive Project Page** | [Open Site](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html) |
-| 📄 **Full Report** | [REPORT.md](./REPORT.md) |
-| 🐳 **Docker Compose File** | [docker-compose.yml](./docker-compose.yml) |
-| 🐍 **Backend Code** | [backend/app.py](./backend/app.py) |
-| 🗄️ **Database Init** | [database/init.sql](./database/init.sql) |
+| Resource              | Link |
+|----------------------|------|
+| 🌐 Interactive Project Page | [Open Site](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html) |
+| 📄 Full Report       | [REPORT.md](./REPORT.md) |
+| 🐳 Docker Compose File | [docker-compose.yml](./docker-compose.yml) |
+| 🐍 Backend Code      | [backend/app.py](./backend/app.py) |
+| 🗄️ Database Init     | [database/init.sql](./database/init.sql) |
+
 ---
 
 ## Project Overview
