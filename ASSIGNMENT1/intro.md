@@ -1,4 +1,4 @@
-# FastAPI & PostgreSQL Deployment with Docker Compose and IPvlan Networking         
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0ccd9cfa-1211-4c0c-811f-76852be364b5" /><img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/76ecb328-5cf1-4abb-9430-6626aa93984a" /># FastAPI & PostgreSQL Deployment with Docker Compose and IPvlan Networking         
 
 ---
 
@@ -47,29 +47,6 @@ Client (Browser / Postman)
 
 ---
 
-## Repository Structure
-
-```
-ASSIGNMENT1/
-│
-├── backend/
-│   ├── app.py                  # FastAPI application with all endpoints
-│   ├── requirements.txt        # Python dependencies
-│   ├── Dockerfile              # Multi-stage build (builder + runtime)
-│   └── .dockerignore           # Excludes unnecessary files from build
-│
-├── database/
-│   ├── Dockerfile              # Custom PostgreSQL 15 Alpine image
-│   └── init.sql                # Auto-creates DB user and table on startup
-│
-├── docker-compose.yml          # Full orchestration with IPvlan, volumes, healthchecks
-├── index.html                  # GitHub Pages project site
-├── .gitignore
-└── README.md
-```
-
----
-
 ## Tech Stack Comparison
 
 | Component | My Project | Why Better |
@@ -89,11 +66,11 @@ Verify Docker is installed:
 
 ```bash
 $ docker --version
-Docker version 29.2.1, build a5c7197
-
 $ docker compose version
-Docker Compose version v5.0.2
+
 ```
+![](version.png)
+
 
 ---
 
@@ -389,6 +366,7 @@ $ docker network create -d ipvlan --subnet=172.22.208.0/24 --gateway=172.22.208.
 $ docker network ls
 
 ```
+![](dockerls.png) 
 
 ### Inspect Network
 
@@ -397,26 +375,6 @@ $ docker network inspect mynetwork
 ```
 ![](inspect_network.png)
 
-```json
-[
-  {
-    "Name": "mynetwork",
-    "Driver": "ipvlan",
-    "IPAM": {
-      "Config": [
-        {
-          "Subnet": "172.22.208.0/24",
-          "Gateway": "172.22.208.1"
-        }
-      ]
-    },
-    "Options": {
-      "parent": "eth0"
-    }
-  }
-]
-```
-
 ---
 
 ## Step 4 — Build and Start Containers
@@ -424,12 +382,7 @@ $ docker network inspect mynetwork
 ```bash
 $ docker compose up --build
 ```
-
-```
-[+] Building 14.2s (4/4) FINISHED
-✔ Container postgres_db   Healthy
-✔ Container backend_api   Created
-```
+![](buildoutput.png)
 
 ---
 
@@ -438,6 +391,7 @@ $ docker compose up --build
 ```bash
 $ docker ps
 ```
+![](container_working.png) 
 
 ---
 
@@ -450,6 +404,7 @@ $ docker inspect backend_api | grep IPAddress
 $ docker inspect postgres_db | grep IPAddress
 "IPAddress": "172.22.208.10"
 ```
+![](staticip.png) 
 
 ---
 
@@ -458,15 +413,9 @@ $ docker inspect postgres_db | grep IPAddress
 ### Health Check
 
 ```bash
-$ docker exec backend_api python3 -c \
-  "import urllib.request; \
-  print(urllib.request.urlopen('http://localhost:8000/health').read().decode())"
+$ docker exec backend_api python3 -c "import urllib.request;  \print(urllib.request.urlopen('http://localhost:8000/health').read().decode())"
 ```
-
-**Output:**
-```json
-{"status":"healthy","service":"fastapi-backend"}
-```
+![](container_status.png) 
 
 ### Insert Record (POST)
 
@@ -483,11 +432,6 @@ print(urllib.request.urlopen(req).read().decode())
 "
 ```
 
-**Output:**
-```json
-{"message":"Record inserted successfully","id":1}
-```
-
 ### Fetch All Records (GET)
 
 ```bash
@@ -495,11 +439,7 @@ $ docker exec backend_api python3 -c \
   "import urllib.request; \
   print(urllib.request.urlopen('http://localhost:8000/api/records').read().decode())"
 ```
-
-**Output:**
-```json
-[{"id":1,"data":"Hello from Shreya","created_at":"2026-03-19 18:25:55.631923"}]
-```
+![](msg&volume.png) 
 
 ---
 
@@ -508,14 +448,9 @@ $ docker exec backend_api python3 -c \
 ```bash
 $ docker images
 ```
+![](docker_images.png) 
 
-```
-IMAGE                          ID            DISK USAGE   CONTENT SIZE
-containerized-webapp-backend   d98329085459  219MB        53.5MB
-containerized-webapp-db        9c9939582ce1  392MB        109MB
-```
-
-> Backend image is only **219MB** thanks to multi-stage build with python:3.11-slim. A standard python:3.11 image would be ~1GB.
+> Backend image is only **53.5** thanks to multi-stage build with python:3.11-slim. A standard python:3.11 image would be ~1GB.
 
 ---
 
@@ -526,22 +461,14 @@ containerized-webapp-db        9c9939582ce1  392MB        109MB
 ```bash
 $ docker compose down
 ```
-
-```
-✔ Container backend_api   Removed   1.3s
-✔ Container postgres_db   Removed   0.4s
-```
+![](docker_compose.png) 
 
 ### Restart Containers
 
 ```bash
 $ docker compose up -d
 ```
-
-```
-✔ Container postgres_db   Healthy
-✔ Container backend_api   Created
-```
+![](docker_compose.png)
 
 ### Fetch Records Again — Data Still Exists ✅
 
@@ -551,21 +478,14 @@ $ docker exec backend_api python3 -c \
   print(urllib.request.urlopen('http://localhost:8000/api/records').read().decode())"
 ```
 
-**Output:**
-```json
-[{"id":1,"data":"Hello from Shreya","created_at":"2026-03-19 18:25:55.631923"}]
-```
+![](docker_compose.png)
 
 ### Verify Volume
 
 ```bash
 $ docker volume ls
 ```
-
-```
-DRIVER    VOLUME NAME
-local     containerized-webapp_pgdata   ✅
-```
+![](dockervolumels.png)
 
 ---
 
@@ -598,7 +518,7 @@ local     containerized-webapp_pgdata   ✅
 | Host Isolation | Host cannot reach containers | Host can communicate |
 | Best Use Case | Small LAN / bare metal | Cloud / VMs ✅ Used here |
 
-**Why IPvlan was chosen:** In virtualized environments (like WSL/cloud VMs), many network interfaces block multiple MAC addresses per port. IPvlan avoids this by sharing the host MAC, making it the correct choice for this setup.
+**Why IPvlan was chosen in our application:** In virtualized environments (like WSL/cloud VMs), many network interfaces block multiple MAC addresses per port. IPvlan avoids this by sharing the host MAC, making it the correct choice for this setup.
 
 ---
 
