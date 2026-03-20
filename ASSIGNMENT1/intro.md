@@ -12,7 +12,7 @@
 
 **[👉Link](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html)**
 
-The link above opens the project page with:
+The above link opens the project page with:
 
 - Full system architecture diagram
 - Step-by-step setup guide with terminal outputs
@@ -20,9 +20,15 @@ The link above opens the project page with:
 - IPvlan vs Macvlan comparison table
 - Image optimization results
 
+## 📁 Quick Access
 
-📁 Quick Access
-ResourceLink🌐 Interactive Project PageOpen Site📄 Full ReportREPORT.md🐳 Docker Compose Filedocker-compose.yml🐍 Backend Codebackend/app.py🗄️ Database Initdatabase/init.sql
+| Resource | Link |
+|---|---|
+| 🌐 **Interactive Project Page** | [Open Site](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html) |
+| 📄 **Full Report** | [REPORT.md](./REPORT.md) |
+| 🐳 **Docker Compose File** | [docker-compose.yml](./docker-compose.yml) |
+| 🐍 **Backend Code** | [backend/app.py](./backend/app.py) |
+| 🗄️ **Database Init** | [database/init.sql](./database/init.sql) |
 ---
 
 ## Project Overview
