@@ -8,9 +8,7 @@
 **Sap-Id:** 500121082                
 
 ---
-🌐 Live Project Site
-
-**[👉Link](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html)**
+**[🌐 Live Project Site](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html)**
 
 The above link opens the project page with:
 
