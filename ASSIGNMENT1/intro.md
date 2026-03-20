@@ -8,6 +8,22 @@
 **Sap-Id:** 500121082                
 
 ---
+🌐 Live Project Site
+
+👉 > **[👉 Click here to view the full interactive project page](https://shreya172004.github.io/Containerization_and_DevOps/ASSIGNMENT1/index.html)**
+
+The link above opens the project page with:
+
+- Full system architecture diagram
+- Step-by-step setup guide with terminal outputs
+- API endpoint documentation
+- IPvlan vs Macvlan comparison table
+- Image optimization results
+
+
+📁 Quick Access
+ResourceLink🌐 Interactive Project PageOpen Site📄 Full ReportREPORT.md🐳 Docker Compose Filedocker-compose.yml🐍 Backend Codebackend/app.py🗄️ Database Initdatabase/init.sql
+---
 
 ## Project Overview
 
