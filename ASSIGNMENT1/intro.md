@@ -474,9 +474,7 @@ $ docker compose up -d
 ### Fetch Records Again — Data Still Exists ✅
 
 ```bash
-$ docker exec backend_api python3 -c \
-  "import urllib.request; 
-  print(urllib.request.urlopen('http://localhost:8000/api/records').read().decode())"
+$ docker exec backend_api python3 -c "import urllib.request; print(urllib.request.urlopen('http://localhost:8000/api/records').read().decode())"
 ```
 
 ![](docker_compose.png)
