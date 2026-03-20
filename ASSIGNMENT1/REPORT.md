@@ -23,16 +23,15 @@
 
 This project demonstrates the design, containerization, and deployment of a production-ready web application using modern Docker practices. The system consists of two services:
 
-- **Backend:** A FastAPI (Python 3.11) REST API that provides CRUD operations with auto-generated documentation
-- **Database:** A PostgreSQL 15 Alpine database with persistent storage
+- **Backend:** A FastAPI (Python 3.11) REST API that provides CRUD operations with auto-generated documentation.
+- **Database:** A PostgreSQL 15 Alpine database with persistent storage.
 
 Key technologies and concepts demonstrated:
-- Docker multi-stage builds for optimized images
-- Docker Compose for service orchestration with health checks and restart policies
-- IPvlan networking for static IP assignment to containers
-- Named volumes for data persistence
-- Non-root user execution for container security
-- Table auto-creation on startup via database initialization script
+- Docker multi-stage builds for optimized images.
+- Docker Compose for service orchestration with health checks and restart policies.
+- IPvlan networking for static IP assignment to containers.
+- Named volumes for data persistence.
+- Non-root user execution for container security.
 
 ---
 
@@ -196,6 +195,7 @@ docker network create \
   -o parent=eth0 \
   mynetwork
 ```
+![](network.png)  
 
 ### Docker Compose Network Configuration
 
@@ -238,6 +238,7 @@ docker network inspect mynetwork
 docker inspect backend_api | grep IPAddress
 docker inspect postgres_db | grep IPAddress
 ```
+![](staticip.png)  
 
 **Output:**
 ```
@@ -282,6 +283,9 @@ docker images
 docker history containerized-webapp-backend
 docker history containerized-webapp-db
 ```
+![](docker_images.png)  
+
+![](dockerhistory.png)  
 
 ---
 
@@ -313,7 +317,7 @@ docker history containerized-webapp-db
 - You want better scalability with less switch overhead
 - You need L3 routing capabilities between subnets
 
-### Our Choice: IPvlan
+### Rationale: IPvlan over Macvlan
 
 **IPvlan was chosen** for this project because:
 1. This project runs in a WSL environment where many hypervisors block multiple MAC addresses per port — a requirement for Macvlan
@@ -322,22 +326,6 @@ docker history containerized-webapp-db
 4. Better suited for cloud and container-first deployments
 
 ---
-
-## 7. Volume Persistence
-
-### Named Volume Configuration
-
-```yaml
-# docker-compose.yml
-volumes:
-  pgdata:
-    name: containerized-webapp_pgdata
-
-services:
-  db:
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-```
 
 ### How It Works
 
@@ -382,8 +370,11 @@ import urllib.request
 print(urllib.request.urlopen('http://localhost:8000/api/records').read().decode())
 "
 # Output: [{"id":1,"data":"Hello from Shreya","created_at":"2026-03-19 18:25:55.631923"}]
-# ✅ Data persisted successfully!
+# Data persisted successfully!
 ```
+![](msg&volume.png)  
+
+![](docker_compose.png)  
 
 ### Volume Management Commands
 
@@ -397,13 +388,14 @@ docker volume ls
 # Inspect the volume
 docker volume inspect containerized-webapp_pgdata
 
-# WARNING: This deletes all data permanently
+# This deletes all data permanently
 docker compose down -v
 ```
+![](volume.png)
 
 ---
 
-## 8. Conclusion
+## 7. Conclusion
 
 This project successfully demonstrates all required containerization concepts:
 
