@@ -1,4 +1,4 @@
- **Experiment 6: Comparison of Docker Run and Docker Compose**
+ ** Experiment 6: Comparison of Docker Run and Docker Compose **
 
 ## Name: Shreya Mahara  
 Roll no: R2142231007   
