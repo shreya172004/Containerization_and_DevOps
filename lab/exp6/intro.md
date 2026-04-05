@@ -180,7 +180,9 @@ docker ps
 
 **📸 Screenshot – WordPress installation page (via Docker Run):**
 ![](wp1.png)
+![](wp2.png)
 ![](wp3.png)
+
 
 > *The WordPress installation page loads at `http://localhost:8082`, confirming both the MySQL and WordPress containers are running and communicating via the `wp-net` Docker network.*
 
