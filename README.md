@@ -19,7 +19,7 @@ Batch - 3
 5. [Experiment 5 – Docker - Volumes, Environment Variables, Monitoring  and Networks](lab/exp5/intro.md)
 6. [Experiment 6 – Docker Compose vs Docker Run](lab/exp6/intro.md)
 7. [Experiment 7 – CI/CD using Jenkins, Github and Docker Hub](lab/exp7/intro.md)
-8. [Experiment 8 – Chef - Configuration Management](lab/exp8/intro.md)
+8. [Experiment 8 – Ansible](lab/exp8/intro.md)
 
 
 
