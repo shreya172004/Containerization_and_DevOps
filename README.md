@@ -20,8 +20,9 @@ Batch - 3
 6. [Experiment 6 – Docker Compose vs Docker Run](lab/exp6/intro.md)
 7. [Experiment 7 – CI/CD using Jenkins, Github and Docker Hub](lab/exp7/intro.md)
 8. [Experiment 9 – Ansible](lab/exp9/intro.md)
-
-
+9. [Experiment 10 – SonarQube - Static Code Analysis](lab/exp10/intro.md)
+10. [Experiment 11 – Orchestration using Docker Compose & Docker Swarm](lab/exp11/intro.md)
+11. [Experiment 12 – Container Orchestration using Kubernetes](lab/exp12/intro.md)
 
 
 
