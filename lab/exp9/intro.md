@@ -70,7 +70,7 @@ sudo apt update -y
 sudo apt install ansible -y
 ansible --version
 ```
-
+![](image1.png)
 **Post-installation check:**
 
 ```bash
@@ -96,6 +96,7 @@ Ansible uses SSH key-based authentication to connect to managed nodes without pa
 ssh-keygen -t rsa -b 4096
 # Accept all defaults — keys saved to ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub
 ```
+![](image2.png)
 
 Copy keys to the current working directory (needed for building the Docker image):
 
@@ -160,7 +161,8 @@ docker build -t ubuntu-server .
 ```
 
 ---
-![alt text](screenshots/dockerfile.png)
+![](image3.png)
+
 ### Step 4: Launch 4 Server Containers
 
 {% raw %}
@@ -171,7 +173,7 @@ for i in {1..4}; do
     echo -e "IP of server${i} is $(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' server${i})"
 done
 ```
-{% endraw %}
+
 
 **Expected output:**
 
@@ -210,7 +212,6 @@ ansible_ssh_private_key_file=~/.ssh/id_rsa
 ansible_python_interpreter=/usr/bin/python3
 EOF
 ```
-{% endraw %}
 
 Review the generated file:
 
@@ -220,7 +221,7 @@ cat inventory.ini
 
 **Expected `inventory.ini` content:**
 
-![alt text](screenshots/image-2.png)
+![](image4.png)
 
 ### Step 6: Test Connectivity
 
