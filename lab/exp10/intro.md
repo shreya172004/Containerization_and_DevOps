@@ -88,7 +88,7 @@ Navigate to the experiment folder and start all containers:
 cd ~/Desktop/exp10
 docker-compose up -d
 ```
-![alt text](image.png)
+![](image1.png)
 Watch logs until you see **"SonarQube is operational"**:
 
 ```bash
