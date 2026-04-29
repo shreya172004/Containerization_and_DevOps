@@ -257,7 +257,8 @@ ansible all -i inventory.ini -m ping
     "ping": "pong"
 }
 ```
-![alt text](screenshots/image-3.png)
+![](image5.png)
+
 For verbose output (useful for debugging):
 
 
@@ -290,8 +291,9 @@ For verbose output (useful for debugging):
         dest: /root/ansible_test.txt
         content: "Configured by Ansible on {{ inventory_hostname }}"
 ```
-{% endraw %}
-![alt text](screenshots/image-4.png)
+
+![](image6.png)
+
 Run the playbook:
 
 ```bash
@@ -330,11 +332,11 @@ PLAY RECAP *********************************************************************
 ```
 
 ---
-![alt text](screenshots/imagecopy.png)
+![](image7.png)
+
 
 ### Step 8: Create Advanced Playbook (`playbook1.yml`)
 
-{% raw %}
 ```yaml
 ---
 - name: Configure multiple servers
@@ -373,13 +375,14 @@ PLAY RECAP *********************************************************************
           - "System info: {{ uname_output.stdout }}"
           - "Disk space: {{ disk_space.stdout_lines }}"
 ```
-{% endraw %}
+
 
 Run it:
 
 ```bash
 ansible-playbook -i inventory.ini playbook1.yml
 ```
+![](image8.png)
 
 ---
 
@@ -390,7 +393,8 @@ Using Ansible to read the created file across all servers:
 ```bash
 ansible all -i inventory.ini -m command -a "cat /root/ansible_test.txt"
 ```
-![alt text](screenshots/image.png)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0e209096-89e1-4242-9ef3-d04d67fbb754" />
+
 Using Docker exec directly:
 
 ```bash
@@ -398,7 +402,7 @@ for i in {1..4}; do
     docker exec server${i} cat /root/ansible_test.txt
 done
 ```
-![alt text](screenshots/image-1.png)
+![](image9.png)
 **Expected output on each server:**
 
 ```
