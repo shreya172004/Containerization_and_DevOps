@@ -262,7 +262,7 @@ Steps:
 6. Click `Generate`
 7. Copy the token immediately because it is shown only once
 
-![Generate Token](images/generate-token.png)
+![](image6.png)
 
 ### 3.5 Run the Scanner
 
@@ -286,7 +286,6 @@ docker run --rm \
   -Dsonar.projectKey=sample-java-app
 ```
 
-![Run Scanner](images/docker-run.png)
 
 ### 3.6 View Results in the Dashboard
 
@@ -298,7 +297,8 @@ http://localhost:9000/dashboard?id=sample-java-app
 
 You should see bugs, vulnerabilities, code smells, coverage, duplication, and technical debt metrics in the dashboard.
 
-![SonarQube Dashboard](images/sonar-cube-dashbboard.png)
+![](image7.png)
+
 
 ### 3.7 Integrate with Jenkins
 
